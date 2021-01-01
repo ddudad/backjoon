@@ -1,18 +1,28 @@
 #include<stdio.h>
 
 int main() {
-	int a, b, c, cnt=0;
-	int ret=0;
+	int kang[3];
+	int max;
 	
-		cnt=0;
-		ret=scanf("%d %d %d", &a, &b, &c);
-
+	while(scanf("%d", &kang[0])!=EOF) {
+			
+		for(int j=1; j<3; j++) {
+			scanf("%d", &kang[j]);
+		}
 		
-		if( (b-a)>(c-b) ) {
-			printf("%d", b-a-1);
+		if(kang[1]-kang[0]>kang[2]-kang[1]) {
+			max=kang[1]-kang[0];
 		}
 		else {
-			printf("%d", c-b-1);
+			max=kang[2]-kang[1];
 		}
 		
+		if(max<=0) {
+			printf("0\n");
+		}
+		else {
+			printf("%d\n", max-1);
+		}
+	}
+	return 0;
 }
