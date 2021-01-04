@@ -22,8 +22,6 @@ int main() {
 			}
 		}
 		
-		printf("i=%d sum=%d\n", i, sum);
-		
 		if(sum+i==n) {
 			break;
 		}

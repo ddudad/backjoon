@@ -1,27 +1,22 @@
 #include<stdio.h>
+#include<algorithm>
 
 int main() {
-	int n, cnt=0;
+	int c;
+	char boggle[5][6];
 	
-	scanf("%d", &n);
+	scanf("%d", &c);
 	
-	while(1) {
-		if(n==0) {
-			break;
-		}
-		else if(n<0) {
-			cnt=-1;
-			break;
-		}
-		
-		if(n%5==0) {
-			n-=5;
-			cnt++;
-		}
-		else {
-			n-=3;
-			cnt++;
+	for(int i=0; i<5; i++) {
+		for(int j=0; j<=5; j++) {
+			scanf("%c", &boggle[i][j]);
 		}
 	}
-	printf("%d\n", cnt);
+	
+	for(int i=0; i<5; i++) {
+		for(int j=0; j<=5; j++) {
+			printf("%c", boggle[i][j]);
+		}
+	}
+	
 }
