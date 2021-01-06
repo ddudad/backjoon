@@ -31,8 +31,10 @@ int main() {
 	for(int i=0; i<n; i++) {
 		if(time<=arr[i].start) {
 			cnt++;
+			time=arr[i].end;
+			//printf("start: %d end: %d time: %d\n", arr[i].start, arr[i].end, time);
 		}
-		time=arr[i].end;
+		
 	}
 	printf("%d", cnt);
 }
