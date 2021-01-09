@@ -3,23 +3,26 @@
 #include<math.h>
 
 int main() {
-	int l, p, v, max=0, i=0;
+	int n, l, cnt=1;
+	int arr[1000];
+	int pos=0;
 	
-	while(1) {
-		scanf("%d %d %d", &l, &p, &v);
-		
-		if(l==0 && p==0 && v==0) {
-			break;
-		}
-		
-		max=(v/p)*l;
-		
-		if( (v%p) < l) {
-			max+=v%p;
-		}
-		else {
-			max+=l;
-		}
-		printf("Case %d: %d\n", ++i, max);
+	scanf("%d %d", &n, &l);
+	
+	for(int i=0; i<n; i++) {
+		scanf("%d", &arr[i]);
 	}
+	
+	std::sort(arr, arr+n);
+	
+	pos=arr[0];
+	
+	for(int i=1; i<n; i++) {
+		if(arr[i]>pos+l-1) {
+			cnt++;
+			pos=arr[i];
+		}
+	}
+	
+	printf("%d\n", cnt);
 }
