@@ -4,14 +4,21 @@
 #include<ctype.h>
 
 int main() {
-	int n;
+	int n, max=0;
+	int arr[100000];
 	
 	scanf("%d", &n);
 	
-	for(int i=1; i<=n; i++) {
-		int a, b;
-		scanf("%d %d", &a, &b);
-		
-		printf("#%d %d %d\n", i, a/b, a%b);
+	for(int i=0; i<n; i++) {
+		scanf("%d", &arr[i]);
 	}
+	
+	std::sort(arr, arr+n);
+	
+	for(int i=0; i<n; i++) {
+		if(max<(arr[i]*(n-i))) {
+			max=(arr[i]*(n-i));
+		}
+	}
+	printf("%d\n", max);
 }
