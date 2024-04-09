@@ -32,7 +32,7 @@ int solve(int a, int b, int c) {
 		int c = q.front().c;
 		q.pop();
 				
-		for(int i=0; i<n; i++) {
+		for(int i=0; i<6; i++) {
 			int na = max(0, a - damege[i][0]);
 			int nb = max(0, b - damege[i][1]);
 			int nc = max(0, c - damege[i][2]);
